@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ServiceConfigDefinition>
-	<ServiceConfig>
-		<name>sb-api</name>
-		<query-id>query1</query-id>
-		<model>com.spring.boot.micro.services.example.model.SBModel</model>	
-	</ServiceConfig>
-</ServiceConfigDefinition>

@@ -1,9 +1,0 @@
-[
-  {
-     "name":"sb-api",
-     "query":"query1",
-     "model": "com.spring.boot.micro.services.example.model.SBModel"
-   }                
- 
- 
- ]

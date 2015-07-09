@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- Appenders -->
+
+	<appender name="sb_sample" class="org.apache.log4j.rolling.RollingFileAppender">
+		<param name="File" value="C:/slogs/sb_sample-boot.log" />
+		<rollingPolicy class="org.apache.log4j.rolling.FixedWindowRollingPolicy">
+			<param name="MinIndex" value="1" />
+			<param name="MaxIndex" value="3" />
+			<param name="ActiveFileName" value="C:/slogs/sb_sample-boot.log" />
+			<param name="FileNamePattern" value="C:/slogs/sb_sample-boot.log.%i.gz" />			
+		</rollingPolicy>
+		<triggeringPolicy class="org.apache.log4j.rolling.SizeBasedTriggeringPolicy">
+			<param name="MaxFileSize" value="500" />
+		</triggeringPolicy>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d{yyyy-MM-dd HH:mm:ss,SS} %-5p [%t] %-17c{2} (%13F:%L) %3x  -%X{uniqueIdentifier} %m%n" />
+		</layout>
+	</appender>
+	
+
+
+
+	<!-- Application logger -->
+
+	<logger name="com.spring.boot.micro.services.example">
+		<level value="info" />
+		<appender-ref ref="sb_sample" />		
+	</logger>
+	
+<!--  Security logs clutter the log file -->
+  <logger name="com.spring.boot.micro.services.example">
+		<level value="info" />
+		<appender-ref ref="sb_sample" />
+  </logger>
+
+	 <logger name="org.springframework.security.web.authentication">
+		<level value="info" />
+		<appender-ref ref="sb_sample" />	
+	</logger>
+
+	<!-- 3rdparty Loggers -->
+	<logger name="org.springframework">
+		<level value="error" />
+		<appender-ref ref="sb_sample" />		
+	</logger>
+
+
+
+
+	<logger name="org.hibernate">
+		<level value="error" />
+		<appender-ref ref="sb_sample" />		
+	</logger>
+
+	<logger name="org.richfaces">
+		<level value="error" />
+		<appender-ref ref="sb_sample" />	
+	</logger>
+
+
+
+	<!-- Root Logger -->
+	<root additivity="false">
+		<priority value="debug" />
+		<appender-ref ref="sb_sample" />		
+	</root>
+
+</log4j:configuration>

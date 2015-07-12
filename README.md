@@ -1,4 +1,4 @@
-# spring-boot-micro-service-example
+# Spring Boot Micro Service Example
 Spring Boot based Micro Service (Framework) Example
 
 A simple spring boot based micro-service framework for rapid prototyping/development in Java.

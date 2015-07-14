@@ -1,1 +1,1 @@
-java -Dapp.config=../config -Dspring.config.location=../config/application.properties,../config/sql-config.properties,../config/error-config.properties,../config/message-config.properties,../config/validation-config.properties -jar ../lib/app-apis.jar
+java -Dlogging.config=../config/log4j.xml -Dapp.config=../config -Dspring.config.location=../config/application.properties,../config/sql-config.properties,../config/error-config.properties,../config/message-config.properties,../config/validation-config.properties -jar ../lib/app-apis.jar

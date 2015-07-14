@@ -1,0 +1,19 @@
+# Get Docker Image from Oracle / Open JDK (Docker Repository)
+FROM java8
+
+EXPOSE 9081
+EXPOSE 9082
+
+ADD build/lib/app-apis.jar /data/lib/app-apis.jar
+ADD build/config/application.properties /data/config/application.properties
+ADD build/config/error-config.properties /data/config/error-config.properties
+ADD build/config/message-config.properties /data/config/message-config.properties
+ADD build/config/sql-config.properties /data/config/sql-config.properties
+ADD build/config/validation-config.properties /data/config/validation-config.properties
+ADD build/config/service-config.xml /data/config/service-config.xml
+
+ADD build/bin/app-start.sh /data/bin/app-start.sh
+
+WORKDIR /data/bin 
+
+CMD bash -C '/data/bin/app-start.sh'

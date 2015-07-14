@@ -1,4 +1,5 @@
 # Get Docker Image from Oracle / Open JDK (Docker Repository)
+
 FROM java8
 
 EXPOSE 9081
